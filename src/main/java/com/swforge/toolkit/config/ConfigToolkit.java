@@ -38,8 +38,13 @@ public class ConfigToolkit {
     }
 
     public class TSetupJenkinsParam {
-        String[] jobTypes;
-        String revision;
+        private String[] jobTypes;
+        private String revision;
+
+        public TSetupJenkinsParam(String[] jobTypes, String revision) {
+            this.jobTypes = jobTypes;
+            this.revision = revision;
+        }
     }
 
     private String defaultProject;
