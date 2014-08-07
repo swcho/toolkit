@@ -1,7 +1,7 @@
 package com.swforge.toolkit;
 
 
-import com.swforge.toolkit.commands.Main;
+import com.swforge.toolkit.commands.CmdUtils;
 
 /**
  * Hello world!
@@ -11,7 +11,7 @@ public class App
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
-        Main main = new Main(args);
+        CmdUtils cmdUtils = new CmdUtils(new CommandHandler(), args);
+        cmdUtils.run();
     }
 }
