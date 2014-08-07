@@ -34,4 +34,5 @@ public class ConfigUtils {
         configToolkit.setJUserPass(jPass);
         writeToolkitConfig(configToolkit);
     }
+
 }

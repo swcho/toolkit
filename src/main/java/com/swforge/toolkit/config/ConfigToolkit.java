@@ -1,9 +1,47 @@
 package com.swforge.toolkit.config;
 
+import java.util.Map;
+
 /**
  * Created by sungwoo on 14. 8. 7.
  */
 public class ConfigToolkit {
+
+    public class TTestConfig {
+        private String target;
+        private String dmIp;
+        private String conf;
+
+        public String getTarget() {
+            return target;
+        }
+
+        public void setTarget(String target) {
+            this.target = target;
+        }
+
+        public String getDmIp() {
+            return dmIp;
+        }
+
+        public void setDmIp(String dmIp) {
+            this.dmIp = dmIp;
+        }
+
+        public String getConf() {
+            return conf;
+        }
+
+        public void setConf(String conf) {
+            this.conf = conf;
+        }
+    }
+
+    public class TSetupJenkinsParam {
+        String[] jobTypes;
+        String revision;
+    }
+
     private String defaultProject;
     private String defaultBranch;
     private String userId;
@@ -12,8 +50,8 @@ public class ConfigToolkit {
     private String jUserId;
     private String jUserPass;
     private boolean verbose;
-//    testConfig: TTestConfig;
-//    jenkinsSetupInfo: TProjectJenkinsSetupInfo;
+    private TTestConfig testConfig;
+    private Map<String, Map<String, TSetupJenkinsParam>> jenkinsSetupInfo;
 
     public String getDefaultProject() {
         return defaultProject;
@@ -77,5 +115,29 @@ public class ConfigToolkit {
 
     public void setVerbose(boolean verbose) {
         this.verbose = verbose;
+    }
+
+    public void setjUserId(String jUserId) {
+        this.jUserId = jUserId;
+    }
+
+    public void setjUserPass(String jUserPass) {
+        this.jUserPass = jUserPass;
+    }
+
+    public TTestConfig getTestConfig() {
+        return testConfig;
+    }
+
+    public void setTestConfig(TTestConfig testConfig) {
+        this.testConfig = testConfig;
+    }
+
+    public Map<String, Map<String, TSetupJenkinsParam>> getJenkinsSetupInfo() {
+        return jenkinsSetupInfo;
+    }
+
+    public void setJenkinsSetupInfo(Map<String, Map<String, TSetupJenkinsParam>> jenkinsSetupInfo) {
+        this.jenkinsSetupInfo = jenkinsSetupInfo;
     }
 }
