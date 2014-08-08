@@ -45,6 +45,13 @@ public class CmdUtils {
                 cmdHandler.update();
             }
         });
+        addCommand("set-default", new CmdSetDefault(), new ICallback() {
+            @Override
+            public void cb(Object obj) throws Exception {
+                CmdSetDefault cmdSetDefault = CmdSetDefault.class.cast(obj);
+                cmdHandler.setDefault(cmdSetDefault);
+            }
+        });
 
         jc.parse(args);
     }

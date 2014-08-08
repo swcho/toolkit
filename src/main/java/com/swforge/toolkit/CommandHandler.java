@@ -1,6 +1,7 @@
 package com.swforge.toolkit;
 
 import com.google.common.base.Optional;
+import com.swforge.toolkit.commands.CmdSetDefault;
 import com.swforge.toolkit.commands.CmdSetup;
 import com.swforge.toolkit.commands.ICmdHandler;
 import com.swforge.toolkit.config.ConfigToolkit;
@@ -36,5 +37,10 @@ public class CommandHandler implements ICmdHandler {
                 System.out.format("update cb: err=%d\n", err);
             }
         });
+    }
+
+    @Override
+    public void setDefault(CmdSetDefault cmdSetDefault) throws Exception {
+        ConfigUtils.setDefaultProject(cmdSetDefault.getId(), cmdSetDefault.getBranch());
     }
 }

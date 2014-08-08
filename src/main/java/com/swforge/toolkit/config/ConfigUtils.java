@@ -54,6 +54,13 @@ public class ConfigUtils {
         writeToolkitConfig(configToolkit);
     }
 
+    public static void setDefaultProject(String id, String branch) throws IOException {
+        ConfigToolkit configToolkit = getToolkitConfig();
+        configToolkit.setDefaultProject(id);
+        configToolkit.setDefaultBranch(branch);
+        writeToolkitConfig(configToolkit);
+    }
+
     public static void setSetupJenkinsParam(ConfigProject configProject, String revision, String[] jobTypes) throws IOException {
         ConfigToolkit configToolkit = getToolkitConfig();
 
