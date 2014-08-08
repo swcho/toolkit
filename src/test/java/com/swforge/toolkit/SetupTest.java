@@ -12,4 +12,5 @@ public class SetupTest {
         CmdUtils cmdUtils = new CmdUtils(new CommandHandler(), "setup", "--user", "id", "--pass", "pass");
         cmdUtils.run();
     }
+
 }

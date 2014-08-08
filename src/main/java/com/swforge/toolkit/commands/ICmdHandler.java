@@ -6,4 +6,6 @@ package com.swforge.toolkit.commands;
 public interface ICmdHandler {
 
     abstract void setup(final CmdSetup cmdSetup) throws Exception;
+
+    abstract void update() throws Exception;
 }

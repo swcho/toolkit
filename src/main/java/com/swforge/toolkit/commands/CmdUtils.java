@@ -5,7 +5,6 @@ import com.google.common.base.Strings;
 import com.google.common.collect.Maps;
 
 import java.util.Map;
-import java.util.concurrent.Callable;
 
 /**
  * Created by sungwoo on 14. 8. 6.
@@ -16,7 +15,7 @@ public class CmdUtils {
     private Map<String, TCommandInfo> handlerMap;
 
     private interface ICallback {
-        void handleCommand(Object obj) throws Exception ;
+        void cb(Object obj) throws Exception ;
     }
 
     private class TCommandInfo {
@@ -35,9 +34,15 @@ public class CmdUtils {
 
         addCommand("setup", new CmdSetup(), new ICallback() {
             @Override
-            public void handleCommand(Object obj) throws Exception {
+            public void cb(Object obj) throws Exception {
                 CmdSetup setup = CmdSetup.class.cast(obj);
                 cmdHandler.setup(setup);
+            }
+        });
+        addCommand("update", new CmdUpdate(), new ICallback() {
+            @Override
+            public void cb(Object obj) throws Exception {
+                cmdHandler.update();
             }
         });
 
@@ -50,7 +55,7 @@ public class CmdUtils {
             System.out.println("getParsedCommand: " + jc.getParsedCommand());
             TCommandInfo info = handlerMap.get(parsedCommand);
             try {
-                info.callback.handleCommand(info.obj);
+                info.callback.cb(info.obj);
             } catch (Exception e) {
                 e.printStackTrace();
             }

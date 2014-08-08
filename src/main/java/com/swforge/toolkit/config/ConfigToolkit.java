@@ -5,47 +5,8 @@ import java.util.Map;
 /**
  * Created by sungwoo on 14. 8. 7.
  */
+
 public class ConfigToolkit {
-
-    public class TTestConfig {
-        private String target;
-        private String dmIp;
-        private String conf;
-
-        public String getTarget() {
-            return target;
-        }
-
-        public void setTarget(String target) {
-            this.target = target;
-        }
-
-        public String getDmIp() {
-            return dmIp;
-        }
-
-        public void setDmIp(String dmIp) {
-            this.dmIp = dmIp;
-        }
-
-        public String getConf() {
-            return conf;
-        }
-
-        public void setConf(String conf) {
-            this.conf = conf;
-        }
-    }
-
-    public class TSetupJenkinsParam {
-        private String[] jobTypes;
-        private String revision;
-
-        public TSetupJenkinsParam(String[] jobTypes, String revision) {
-            this.jobTypes = jobTypes;
-            this.revision = revision;
-        }
-    }
 
     private String defaultProject;
     private String defaultBranch;

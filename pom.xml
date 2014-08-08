@@ -19,6 +19,10 @@
             <id>codehaus</id>
             <url>http://repository.codehaus.org/org/codehaus</url>
         </repository>
+        <repository>
+            <id>tmatesoft</id>
+            <url>http://maven.tmatesoft.com/content/repositories/releases/</url>
+        </repository>
     </repositories>
 
     <dependencies>
@@ -36,7 +40,12 @@
         <dependency>
             <groupId>org.tmatesoft.svnkit</groupId>
             <artifactId>svnkit</artifactId>
-            <version>1.7.4-v1</version>
+            <version>1.7.13</version>
+        </dependency>
+        <dependency>
+            <groupId>org.tmatesoft.svnkit</groupId>
+            <artifactId>svnkit-cli</artifactId>
+            <version>1.7.13</version>
         </dependency>
         <dependency>
             <groupId>org.codehaus.jackson</groupId>
