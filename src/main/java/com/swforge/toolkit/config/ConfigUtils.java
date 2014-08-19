@@ -44,6 +44,32 @@ public class ConfigUtils {
         return configToolkit;
     }
 
+    private static String getProjectConfigPath(String projectId, String branch) {
+        return SConfigBase + File.separator + KConfigPath + File.separator + projectId + File.separator + branch;
+    }
+
+    public static ConfigProject getProjectConfig(String projectId, String branch) {
+        ConfigProject ret = null;
+        String projectJsonPath = getProjectConfigPath(projectId, branch);
+        File jsonFile = new File(projectJsonPath + File.separator + "project.json");
+        if (jsonFile.exists()) {
+            try {
+                ObjectMapper objectMapper = new ObjectMapper();
+                ret = objectMapper.readValue(jsonFile, ConfigProject.class);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return ret;
+    }
+
+    public static ConfigProject getDefaultProjectConfig() {
+        ConfigToolkit configToolkit = getToolkitConfig();
+        String projectId = configToolkit.getDefaultProject();
+        String branch = configToolkit.getDefaultBranch();
+        return getProjectConfig(projectId, branch);
+    }
+
     public static void setToolkitConfig(String user, String password, String ip, String jUser, String jPass) throws IOException {
         ConfigToolkit configToolkit = new ConfigToolkit();
         configToolkit.setUserId(user);

@@ -9,8 +9,8 @@ import org.junit.Test;
 public class SyncTest {
 
     @Test
-    public void testUpdate() {
-        CmdUtils cmdUtils = new CmdUtils(new CommandHandler(), "update");
+    public void testSync() {
+        CmdUtils cmdUtils = new CmdUtils(new CommandHandler(), "sync");
         cmdUtils.run();
     }
 

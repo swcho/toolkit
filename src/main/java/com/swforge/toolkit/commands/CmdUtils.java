@@ -52,6 +52,13 @@ public class CmdUtils {
                 cmdHandler.setDefault(cmdSetDefault);
             }
         });
+        addCommand("sync", new CmdSync(), new ICallback() {
+            @Override
+            public void cb(Object obj) throws Exception {
+                CmdSync cmdSync = CmdSync.class.cast(obj);
+                cmdHandler.sync(cmdSync);
+            }
+        });
 
         jc.parse(args);
     }

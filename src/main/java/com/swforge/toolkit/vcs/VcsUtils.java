@@ -1,5 +1,7 @@
 package com.swforge.toolkit.vcs;
 
+import com.swforge.toolkit.config.ConfigProject;
+
 import static com.swforge.toolkit.vcs.IVcs.TType.ESvn;
 
 /**
@@ -14,5 +16,9 @@ public class VcsUtils {
                 break;
         }
         return null;
+    }
+
+    public static void sync(ConfigProject configProject) {
+
     }
 }

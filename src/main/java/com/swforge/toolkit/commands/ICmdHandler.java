@@ -10,4 +10,6 @@ public interface ICmdHandler {
     void update() throws Exception;
 
     void setDefault(final CmdSetDefault cmdSetDefault) throws Exception;
+
+    void sync(final CmdSync cmdSync) throws Exception;
 }

@@ -3,7 +3,9 @@ package com.swforge.toolkit;
 import com.google.common.base.Optional;
 import com.swforge.toolkit.commands.CmdSetDefault;
 import com.swforge.toolkit.commands.CmdSetup;
+import com.swforge.toolkit.commands.CmdSync;
 import com.swforge.toolkit.commands.ICmdHandler;
+import com.swforge.toolkit.config.ConfigProject;
 import com.swforge.toolkit.config.ConfigToolkit;
 import com.swforge.toolkit.config.ConfigUtils;
 import com.swforge.toolkit.vcs.IVcs;
@@ -42,5 +44,10 @@ public class CommandHandler implements ICmdHandler {
     @Override
     public void setDefault(CmdSetDefault cmdSetDefault) throws Exception {
         ConfigUtils.setDefaultProject(cmdSetDefault.getId(), cmdSetDefault.getBranch());
+    }
+
+    @Override
+    public void sync(CmdSync cmdSync) throws Exception {
+        ConfigProject configProject = ConfigUtils.getDefaultProjectConfig();
     }
 }
